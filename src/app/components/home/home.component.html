@@ -1,0 +1,146 @@
+<table class="table">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" style="font-size: 20px;">#</th>
+        <th scope="col" style="font-size: 20px;">Nombre</th>
+        <th scope="col" style="font-size: 20px;">Biografia</th>
+        <th scope="col" style="font-size: 20px;">Aparicion</th>
+        <th scope="col" style="font-size: 20px;">Casa</th>
+        <th scope="col" style="font-size: 20px;">Imagen</th>
+        <th scope="col" style="font-size: 20px;">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of arrayHeros">
+        <th scope="row">{{data._id}}</th>
+        <td class="text-center">{{data.nombre}}</td>
+        <td>{{data.bio}}</td>
+        <td style="width: 110px;" class="text-center">{{data.aparicion}}</td>
+        <td class="text-center">{{data.casa}}</td>
+        <td class="text-center">{{data.img}}</td>
+         
+        <button class="btn btn-outline-warning" data-target="#actualizar" data-toggle="modal" (click)="idActualzar(data._id, data.nombre)">Editar</button>
+        <button class="btn btn-outline-danger" style="margin-left: 5px;"  data-target="#eliminar" data-toggle="modal" (click)="idActualzar(data._id, data.nombre)">Eliminar</button>
+        <!-- <button class="btn btn-outline-success" (click)="getDatabyId()" >Mostrar hereo por ID</button> -->
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-outline-success" routerLink="/createHero"><svg xmlns="http://www.w3.org/2000/svg" width="36px" height="36px" fill="currentColor" class="bi bi-journal-plus" viewBox="0 0 16 16">
+    <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+    <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+    <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
+  </svg></button>
+
+  <button class="btn btn-outline-success m-2 my-sm-0" type="submit" style="margin: 0; width: 100px; height: 50px;" data-target="#search" data-toggle="modal">Search</button>
+
+  <div class="modal fade actualizar" id="actualizar" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width: 600px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Actualizar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"> 
+          
+           <!--AQUI VA LO MEDIO CHIDO osea el formulario -->
+           <div class="d-flex" ><br>
+            <input type="text" class="form-control mb-2 shadow" style="border-radius: 15px; height: 50px; background-color: colores; width: 50px;" placeholder="Id:"  name="_id" [(ngModel)]="heroeNew._id" #_id="ngModel"><br>
+            <label class="col-2" style="margin-top: 10px;">Nombre: </label><br>
+           <input type="text" class="form-control col-9 mb-2 shadow" style="border-radius: 15px; height: 50px; background-color: colores;" placeholder="Para saber mas del heroe haga click en informarcion del heroe"  name="nombre" [(ngModel)]="heroeNew.nombre" #nombre="ngModel">
+        </div>
+                     
+        <div class="d-flex">
+            <label class="col-2" style="margin-top: 10px;">Biografia: </label>
+           <input type="text" class="form-control col-10 mb-2 shadow" style="border-radius: 15px; height: 50px; background-color: colores;" placeholder="¿Cual es su biografia?" name="bio" [(ngModel)]="heroeNew.bio" #bio="ngModel">
+        </div>
+
+        <div class="d-flex">
+            <label class="col-2" style="margin-top: 10px;">imagen: </label><br>
+           <input type="text" class="form-control col-10 mb-2 shadow" style="border-radius: 15px; height: 50px; background-color: colores;" placeholder="Ingresar imagen" name="img" [(ngModel)]="heroeNew.img" #img="ngModel">
+           <input type="file" style="margin: 15px 15px 0px 0px ;" placeholder="Ingresar imagen" name="img" [(ngModel)]="heroeNew.img" #img="ngModel">
+        </div>
+
+        <div class="d-flex">
+            <label class="col-2" style="margin-top: 10px;">Año de aparicion: </label>
+           <input type="date" class="form-control col-10 mb-2 shadow" style="border-radius: 15px; height: 50px; background-color: colores;" placeholder="Ingresar fecha de aparicion" name="aparicion" [(ngModel)]="heroeNew.aparicion" #aparicion="ngModel">
+        </div> 
+        
+        <div class="d-flex">
+            <label class="col-2" style="margin-top: 10px; background-color: colores;">Casa: </label>
+            <div class="form-check" style="margin-top: 10px;">
+              <input class="form-check-input" type="radio" name="casa" [(ngModel)]="heroeNew.casa" #Marvel value="Marvel" checked>
+              <label>
+               Marvel
+              </label>
+            </div>
+            <div class="form-check" style="margin-top: 10px;">
+              <input class="form-check-input" type="radio" name="casa" [(ngModel)]="heroeNew.casa" #DC value="DC">
+              <label>
+                DC
+              </label>
+            </div>
+        </div> 
+      </div>  
+
+      <button class="btn btn-outline-warning" (click)="getDatabyId()">ver informacion del Heroe</button>
+      <button class="btn btn-outline-warning" (click)="putData()">modificar</button>
+        <div class="modal-footer">
+        <button class="btn btn-outline-info" onclick="document.location.reload();">Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+  <div class="modal fade" id="search" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Buscar Heroe</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">   
+          <div>
+            <input type="number" min="0" #term (click)="searchHero(term.value)" class="form-control shadow col-2" style="margin: 0px 200px;" placeholder="ID" >
+          </div>
+          <div class="card text-dark bg-light" style=" margin: 5px 20px;">
+            <div class="card-header">
+              {{resultado.casa}}
+            </div>
+            fecha de aparicion: {{resultado.aparicion}}
+
+            <div class="card-body">
+              <h5 class="card-title">{{resultado.nombre}}</h5>
+              <p class="card-text">{{resultado.bio}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <!--MODAL DELETE  -->
+  <div class="modal fade" id="eliminar" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Eliminar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <H2 class="text-center">¿Seguro que desea eliminarlo?</H2>   
+           
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline-danger" (click)="deleteHero()">Eliminar</button>
+          <button class="btn btn-outline-info" onclick="document.location.reload();">Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div> 

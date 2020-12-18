@@ -1,0 +1,56 @@
+<div style="background: linear-gradient( #fff 0% ,rgba(173, 194, 154, 0.596) 10%, rgb(3, 209, 3) 60%, rgba(25, 128, 4, 0.822) 75%, rgba(62, 167, 62, 0.589) 90%, #fff 100%); height: 80%;"> 
+     
+    <form autocomplete="off" ngForm="form" #form="ngForm" (ngSubmit)="enviarHeroe(form)"> 
+         <div class="jumbotron fondo text-center" style="width: 700px; margin: 40px auto 0px auto; border-radius: 50px;">
+            <h3 class="text-center">Crear Heroe </h3>
+          <div>
+              <!-- <div class="d-flex"> 
+                  <label class="col-2" style="margin-top: 10px;">ID: </label>
+                 <input type="number" class="form-control col-2 mb-2 shadow" style="border-radius: 15px; height: 50px;" placeholder="ID"  name="id" [(ngModel)]="heroeNew._id" #id="ngModel">
+              </div> -->
+                           
+              <div class="d-flex"> 
+                  <label class="col-2" style="margin-top: 10px;">Nombre: </label>
+                 <input type="text" class="form-control col-10 mb-2 shadow" style="border-radius: 15px; height: 50px;" placeholder="Ingresar Nombre"  name="nombre" [(ngModel)]="heroeNew.nombre" #nombre="ngModel">
+              </div>
+                           
+              <div class="d-flex">
+                  <label class="col-2" style="margin-top: 10px;">Biografia: </label>
+                 <input type="text" class="form-control col-10 mb-2 shadow" style="border-radius: 15px; height: 50px;" placeholder="¿Cual es su biografia?" name="bio" [(ngModel)]="heroeNew.bio" #bio="ngModel">
+              </div>
+
+              <div class="d-flex">
+                  <label class="col-2" style="margin-top: 10px;">imagen: </label>
+                 <input type="file" class="form-control col-10 mb-2 shadow" style="border-radius: 15px; height: 50px;" placeholder="Ingresar imagen" name="img" [(ngModel)]="heroeNew.img" #img="ngModel">
+              </div>
+ 
+              <div class="d-flex">
+                  <label class="col-2" style="margin-top: 10px;">Año de aparicion: </label>
+                 <input type="date" class="form-control col-10 mb-2 shadow" style="border-radius: 15px; height: 50px;" placeholder="Ingresar fecha de aparicion" name="aparicion" [(ngModel)]="heroeNew.aparicion" #aparicion="ngModel">
+              </div> 
+              
+              <div class="d-flex">
+                  <label class="col-2" style="margin-top: 10px;">Casa: </label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="casa" [(ngModel)]="heroeNew.casa" #Marvel value="Marvel" checked>
+                    <label>
+                     Marvel
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="casa" [(ngModel)]="heroeNew.casa" #DC value="DC">
+                    <label>
+                      DC
+                    </label>
+                  </div>
+              </div> 
+            </div> 
+            <button type="submit
+            " class="btn btn-outline-success col-6 text-center m-4" onclick="document.location.reload();">Enviar</button>   
+            <button class="btn btn-outline-danger m-2" routerLink="/home"><svg xmlns="http://www.w3.org/2000/svg" width="36px" height="16px" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+              <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
+              <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+            </svg></button>
+        </div>
+     </form>
+</div>

@@ -1,0 +1,54 @@
+@keyframes opacidad {
+    from{
+       opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+*{
+animation: opacidad 2s 0s ease both;
+}
+
+.btn{
+    width: 150px;
+    margin: 10px 20px; 
+}
+
+.form-control{
+    width: 500px;
+    height: 45px;
+}
+
+.home{
+   background-color:#2b6b00ee;
+   transition: all;
+   transition-duration: 0.1s;
+   transition-delay: 0.1s;
+   border-radius: 100%;
+   width: 80px;
+   height:80px;
+   margin-left: 120px;
+}
+
+.home:hover{
+    background-color: #740013da;
+    color: #fff;
+}
+
+.crear{
+    background-color:#2b6b00ee;
+    transition: all;
+    transition-duration: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.crear:hover{
+    background-color: #740000ef;
+    color: #dfa;
+}
+
+h1{
+    color: #222;
+    font-size: 40px;
+}

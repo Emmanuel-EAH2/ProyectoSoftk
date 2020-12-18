@@ -1,0 +1,29 @@
+@keyframes opacidad {
+    from{
+       opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+*{
+animation: opacidad 1s 0s ease both;
+}
+
+h3{
+    font-size: 20px;
+    color: darkcyan;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.col-2{
+    font-size: 20px;
+    margin: 10px 10px 5px 0px;
+}
+
+.form-check{
+    font-size: 20px;
+    margin: 5px 10px;
+}

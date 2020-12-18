@@ -1,0 +1,58 @@
+@keyframes opacidad {
+    from{
+       opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+*{
+animation: opacidad 1.3s 0s ease both;
+}
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+table{
+    background: radial-gradient( #fff 5% ,#eee 20% , #ddd 80%, #ccc 90%, #999 100%);
+}
+
+h5{
+    font-size: 30px;
+}
+
+.btn-outline-warning{
+   position: relative;
+   display: flex;
+   margin: 10px 10px;
+}
+
+.btn-outline-danger{
+ position: relative;
+ display: flex;
+ margin: 10px 10px;
+}
+
+.form-check{
+    font-size: 20px;
+    margin: 5px 10px;
+}
+
+tr{
+    /* border: 2px solid #f199; */
+    transition-duration: 0.2s;
+}
+
+tr:hover{
+    background-color: #ccc;
+}
+
+.actualizar{
+    width: 1000px;
+    background: radial-gradient(#fff 0%,#551d 60%,#331 90% );
+    margin: 1px 150px ;
+    padding: 0px 200px 0px 0px;
+}
+
